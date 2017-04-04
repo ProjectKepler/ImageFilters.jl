@@ -40,7 +40,7 @@ function gethorizontalsumtriple!(horizontalsum::Array{Float32,3},
       @inbounds redchannel -= imagedata[1, prevpixelx, pixely]
       @inbounds greenchannel -= imagedata[2, prevpixelx, pixely]
       @inbounds bluechannel -= imagedata[3, prevpixelx, pixely]
-      @inbounds [1, pixelx, pixely] = redchannel * normfactor
+      @inbounds horizontalsum[1, pixelx, pixely] = redchannel * normfactor
       @inbounds horizontalsum[2, pixelx, pixely] = greenchannel * normfactor
       @inbounds horizontalsum[3, pixelx, pixely] = bluechannel * normfactor
     end
